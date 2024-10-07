@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <h1>ThermoSwap</h1>
+        <div class="container">
+            <div class="two">
+                <input id="userVal" type="number" placeholder=" put value . . .">
+                <input id="output" type="number" placeholder="output will be . . . ">
+            <h4 id="msg"></h4>
+            <h4 >OPERATIONS</h4>
+              </div>
+               
+            <div class="one">
+
+                <button id="calculate" onclick="F_C()"><sup>o</sup>F => <sup>o</sup>C</button>
+                <button id="calculate" onclick="K_C()"><sup>o</sup>K => <sup>o</sup>C</button>
+                <button id="calculate" onclick="K_F()"><sup>o</sup>K => <sup>o</sup>F</button>
+            </div>
+            <div class="three">
+                <button id="calculate" onclick="C_F()"><sup>o</sup>C => <sup>o</sup>F</button>
+                <button id="calculate" onclick="C_K()"><sup>o</sup>C => <sup>o</sup>K</button>
+                <button id="calculate" onclick="F_K()"><sup>o</sup>F => <sup>o</sup>K</button>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- JS -->
+    <script>
+
+        function C_F() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to fehrenheit
+            user = ((user) * (9 / 5) + 32)  
+            user = user.toFixed(3)
+           
+            console.log(user + " F");
+            let fehrenheit = document.getElementById('output').value = user ;
+            user = document.getElementById('userVal').value = ' ';
+          document.getElementById('msg').innerHTML= "celsius to fahrenheit"
+        }
+
+
+
+
+
+
+        function C_K() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to kelvin
+            user = (user + (273.15))
+            user = user.toFixed(3)
+            console.log(user + " K");
+            let kelvin = document.getElementById('output').value = user;
+            user = document.getElementById('userVal').value = " ";
+            document.getElementById('msg').innerHTML= "Celsius to kelvin"
+        }
+
+
+
+        function F_K() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to kelvin
+            user = (user - (32)) * (5 / 9) + (273.15)
+            user = user.toFixed(3)
+
+            console.log(user + " K");
+            let F_k = document.getElementById('output').value = user;
+            user = document.getElementById('userVal').value = " ";
+            document.getElementById('msg').innerHTML= "fahrenheit to kelvin"
+        }
+
+        function K_F() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to kelvin
+            user = (user - (273.15)) * (9 / 5) + (32)
+            user = user.toFixed(3)
+
+            console.log(user + " K");
+            let K_F = document.getElementById('output').value = user;
+            user = document.getElementById('userVal').value = " ";
+            document.getElementById('msg').innerHTML= "kelvin to fahrenheit"
+        }
+
+
+        function F_C() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to kelvin
+            user = (user - (32)) * (5 / 9)
+            user = user.toFixed(3)
+
+            console.log(user + " K");
+            let K_F = document.getElementById('output').value = user;
+            user = document.getElementById('userVal').value = " ";
+            document.getElementById('msg').innerHTML= "fahrenheit to celsius"
+        }
+        
+        function K_C() {
+            var user = document.getElementById('userVal').value;
+            user = parseInt(user)
+            console.log(user);
+            //    celcsius to kelvin
+            user = (user - (273.15))
+            user = user.toFixed(3)
+            
+            console.log(user + " K");
+            let K_C = document.getElementById('output').value = user;
+            user = document.getElementById('userVal').value = " ";
+            document.getElementById('msg').innerHTML= "kelvin to celsius"
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
